@@ -18,6 +18,9 @@ import {RobotTask} from "./model/Robots/RobotTask";
 import {TaskpanelDetailsComponent} from "./components/taskpanel/taskpanel-details/taskpanel-details.component";
 import {TaskpanelListComponent} from "./components/taskpanel/taskpanel-list/taskpanel-list.component";
 import {RobotListComponent} from "./components/robot-list/robot-list.component";
+import { TaskCreatorPanelComponent } from './components/task-creator-panel/task-creator-panel.component';
+import { TaskCreatorComponent } from './components/task-creator-panel/task-creator/task-creator.component';
+import { TaskDetailsComponent } from './components/task-creator-panel/task-details/task-details.component';
 
 
 const routes: Routes = [
@@ -35,8 +38,6 @@ const routes: Routes = [
   {path: 'stands', component: StandCreatorComponent},
   {
     path: 'adminpanel', component: AdminPanelComponent,
-    canActivate: [AuthGuard],
-    data: {rolesIDs: ['ROLE_ADMIN']},
   },
   {
     path: 'users', component: UserspanelComponent,
@@ -52,6 +53,10 @@ const routes: Routes = [
   {path: 'movementPaths', component: MovementPathComponent},
   {path: 'corridors', component: CorridorsComponent},
   {path: 'taskpanel', component: TaskpanelComponent},
+  {path: 'task-creator-panel', component: TaskCreatorPanelComponent},
+  {path: 'task-creator-panel/add', component: TaskCreatorComponent},
+  {path: 'task-creator-panel/edit/:id', component: TaskCreatorComponent},
+  {path: 'task-creator-panel/details/:id', component: TaskDetailsComponent},
   {path: 'access-denied', component: AccessForbiddenComponent},
 
 ];
